@@ -5,8 +5,10 @@
  */
 package com.shirley.left_form;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,4 +20,11 @@ public class FormPanel extends JPanel {
     private JLabel green_label;
     private JLabel blue_label;
     private JLabel content_label;
+    private JTextField title_field;
+    private JTextField red_field;
+    private JTextField blue_field;
+    private JTextField green_field;
+    private JButton submit_button;
+    private FormListener formListener;
+    
 }
