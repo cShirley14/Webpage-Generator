@@ -39,5 +39,4 @@ public class Languages {
         }
         messages = ResourceBundle.getBundle("messages", locale);
     }
-    
 }
