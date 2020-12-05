@@ -2,6 +2,8 @@ package com.shirley.left_form;
 
 import com.shirley.Languages;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
@@ -59,7 +61,6 @@ public class FormPanel extends JPanel {
         blue_field = new JTextField(10);
         green_field = new JTextField(10);
         content_field = new JTextField(10);
-        
         submit_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,7 +77,95 @@ public class FormPanel extends JPanel {
                 }
             }
         });
-        
+     
+        layoutComponents();
     }
     
+    public void setListener(FormListener formListener) {
+        this.formListener = formListener;
+    }
+    
+    public void layoutComponents() {
+        setLayout(new GridBagLayout());
+        GridBagConstraints gc = new GridBagConstraints();
+        
+        /******** First row ********/
+        gc.weightx = 1;
+        gc.weighty = 1;
+        
+        gc.gridx = 0;
+        gc.gridy = 0;
+        gc.anchor = GridBagConstraints.LINE_END;
+        add(title_label, gc);
+        
+        gc.gridx = 1;
+        gc.gridy = 0;
+        gc.anchor = GridBagConstraints.LINE_START;
+        add(title_field, gc);
+        
+        /******** Second row ********/
+        gc.weightx = 1;
+        gc.weighty = 1;
+        
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_END;
+        add(red_label, gc);
+        
+        gc.gridx = 1;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_START;
+        add(red_field, gc);
+        
+        /******** third row ********/
+        gc.weightx = 1;
+        gc.weighty = 1;
+        
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_END;
+        add(green_label, gc);
+        
+        gc.gridx = 1;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_START;
+        add(green_field, gc);
+        
+        /******** fourth row ********/
+        gc.weightx = 1;
+        gc.weighty = 1;
+        
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_END;
+        add(blue_label, gc);
+        
+        gc.gridx = 1;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_START;
+        add(blue_field, gc);
+        
+        /******** fifth row ********/
+        gc.weightx = 1;
+        gc.weighty = 1;
+        
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_END;
+        add(content_label, gc);
+        
+        gc.gridx = 1;
+        gc.gridy = 1;
+        gc.anchor = GridBagConstraints.LINE_START;
+        add(content_field, gc);
+        
+        /******** sixth row ********/
+        gc.weightx = 1;
+        gc.weighty = 20;
+        
+        gc.gridx = 1;
+        gc.gridy = 2;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(submit_button, gc);
+    }
 }
