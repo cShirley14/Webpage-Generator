@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
  * @author Chantal Shirley
  */
 public class Languages {
-    public enum LanguageOptions { USA, SPANISH, CATALAN, BELARUSSIAN };
+    public enum LanguageOptions { USA, SPANISH, CATALAN, BELARUSIAN };
     private static ResourceBundle messages = ResourceBundle.getBundle(
             "messages", Locale.getDefault());
     
@@ -26,11 +26,18 @@ public class Languages {
         
         switch (language) {
             case USA:
-                
+                locale = Locale.US;
                 break;
-            default:
-                throw new AssertionError();
+            case SPANISH:
+                locale = new Locale("ES", "MX");
+                break;
+            case CATALAN:
+                locale = new Locale("CA");
+                break;
+            case BELARUSIAN:
+                locale = new Locale("BE");
         }
+        messages = ResourceBundle.getBundle("messages", locale);
     }
     
 }
