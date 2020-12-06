@@ -130,11 +130,6 @@ public class FormPanel extends JPanel {
         gc.gridx = 1;
         gc.gridy = 3;
         gc.anchor = GridBagConstraints.LINE_START;
-        add(colorChooser_field, gc);
-        
-        gc.gridx = 1;
-        gc.gridy = 3;
-        gc.anchor = GridBagConstraints.FIRST_LINE_END;
         add(choose_button, gc);
         
         /******** fourth row ********/
