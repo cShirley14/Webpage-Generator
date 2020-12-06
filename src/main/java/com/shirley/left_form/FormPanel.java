@@ -104,87 +104,45 @@ public class FormPanel extends JPanel {
         gc.anchor = GridBagConstraints.LINE_START;
         add(title_field, gc);
         
-        /******** Second row ********/
+        /******** second row ********/
         gc.weightx = 1;
         gc.weighty = 1;
         
         gc.gridx = 0;
-        gc.gridy = 1;
+        gc.gridy = 2;
         gc.anchor = GridBagConstraints.LINE_END;
-        add(red_label, gc);
+        add(content_label, gc);
         
         gc.gridx = 1;
-        gc.gridy = 1;
+        gc.gridy = 2;
         gc.anchor = GridBagConstraints.LINE_START;
-        add(red_field, gc);
+        add(content_field, gc);
         
         /******** third row ********/
         gc.weightx = 1;
         gc.weighty = 1;
         
         gc.gridx = 0;
-        gc.gridy = 2;
-        gc.anchor = GridBagConstraints.LINE_END;
-        add(green_label, gc);
-        
-        gc.gridx = 1;
-        gc.gridy = 2;
-        gc.anchor = GridBagConstraints.LINE_START;
-        add(green_field, gc);
-        
-        /******** fourth row ********/
-        gc.weightx = 1;
-        gc.weighty = 1;
-        
-        gc.gridx = 0;
         gc.gridy = 3;
-        gc.anchor = GridBagConstraints.LINE_END;
-        add(blue_label, gc);
-        
-        gc.gridx = 1;
-        gc.gridy = 3;
-        gc.anchor = GridBagConstraints.LINE_START;
-        add(blue_field, gc);
-        
-        /******** fifth row ********/
-        gc.weightx = 1;
-        gc.weighty = 1;
-        
-        gc.gridx = 0;
-        gc.gridy = 4;
-        gc.anchor = GridBagConstraints.LINE_END;
-        add(content_label, gc);
-        
-        gc.gridx = 1;
-        gc.gridy = 4;
-        gc.anchor = GridBagConstraints.LINE_START;
-        add(content_field, gc);
-        
-        /******** sixth row ********/
-        gc.weightx = 1;
-        gc.weighty = 1;
-        
-        gc.gridx = 0;
-        gc.gridy = 5;
         gc.anchor = GridBagConstraints.LINE_END;
         add(colorChooser_label, gc);
         
         gc.gridx = 1;
-        gc.gridy = 5;
+        gc.gridy = 3;
         gc.anchor = GridBagConstraints.LINE_START;
         add(colorChooser_field, gc);
         
         gc.gridx = 1;
-        gc.gridy = 5;
+        gc.gridy = 3;
         gc.anchor = GridBagConstraints.FIRST_LINE_END;
         add(choose_button, gc);
         
-        /******** seventh row ********/
+        /******** fourth row ********/
         gc.weightx = 1;
         gc.weighty = 20;
         
         gc.gridx = 1;
-        gc.gridy = 6;
+        gc.gridy = 4;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(submit_button, gc);
     }
