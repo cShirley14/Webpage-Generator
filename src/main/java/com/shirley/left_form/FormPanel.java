@@ -1,6 +1,7 @@
 package com.shirley.left_form;
 
 import com.shirley.Languages;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -9,8 +10,10 @@ import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JColorChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
@@ -24,12 +27,15 @@ public class FormPanel extends JPanel {
     private JLabel green_label;
     private JLabel blue_label;
     private JLabel content_label;
+    private JLabel colorChooser_label;
     private JTextField title_field;
     private JTextField red_field;
     private JTextField blue_field;
     private JTextField green_field;
-    private JTextField content_field;
+    private JTextArea content_field;
+    private JTextField colorChooser_field;
     private JButton submit_button;
+    private JButton choose_button;
     private FormListener formListener;
     private ResourceBundle messages = Languages.getResourceBundle();
     
@@ -49,13 +55,26 @@ public class FormPanel extends JPanel {
         blue_label = new JLabel(messages.getString("request-blue"));
         green_label = new JLabel(messages.getString("request-green"));
         content_label = new JLabel(messages.getString("request-content"));
+        colorChooser_label = new JLabel(messages.getString("choose-color"));
         submit_button = new JButton(messages.getString("submit-button"));
         
         title_field = new JTextField(10);
         red_field = new JTextField(10);
         blue_field = new JTextField(10);
         green_field = new JTextField(10);
-        content_field = new JTextField(25);
+        colorChooser_field = new JTextField(10);
+        content_field = new JTextArea(20,20);
+        
+        choose_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Execute JColorChooser
+                Color color = Color.RED;
+                Color actualColor = JColorChooser.showDialog(colorChooser_field,"Select a Color", color);
+                System.out.println(actualColor);
+            }
+        });
+        
         submit_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -156,10 +175,24 @@ public class FormPanel extends JPanel {
         
         /******** sixth row ********/
         gc.weightx = 1;
-        gc.weighty = 20;
+        gc.weighty = 1;
+        
+        gc.gridx = 0;
+        gc.gridy = 5;
+        gc.anchor = GridBagConstraints.LINE_END;
+        add(colorChooser_label, gc);
         
         gc.gridx = 1;
         gc.gridy = 5;
+        gc.anchor = GridBagConstraints.LINE_START;
+        add(colorChooser_field, gc);
+        
+        /******** seventh row ********/
+        gc.weightx = 1;
+        gc.weighty = 20;
+        
+        gc.gridx = 1;
+        gc.gridy = 6;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(submit_button, gc);
     }
