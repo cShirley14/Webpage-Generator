@@ -61,9 +61,9 @@ public class FormPanel extends JPanel {
                 // Execute JColorChooser
                 Color color = Color.RED;
                 Color actualColor = JColorChooser.showDialog(choose_button,"Select a Color", color);
-                red = Integer.toString(actualColor.getRed());
-                green = Integer.toString(actualColor.getGreen());
-                blue = Integer.toString(actualColor.getBlue());
+                red = Integer.toString(255-actualColor.getRed());
+                green = Integer.toString(255-actualColor.getGreen());
+                blue = Integer.toString(255-actualColor.getBlue());
             }
         });
         
