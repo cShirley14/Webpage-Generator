@@ -98,9 +98,6 @@ public class MainFrame extends JFrame {
             @Override
             public void formSubmit(FormEvent formEvent) {
                 String title = formEvent.getTitle();
-                String red = formEvent.getRedColor();
-                String green = formEvent.getGreenColor();
-                String blue = formEvent.getBlueColor();
                 String content = formEvent.getContent();
                 
                 textPanel.appendText("Test Success");

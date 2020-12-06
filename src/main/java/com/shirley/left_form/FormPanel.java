@@ -23,15 +23,9 @@ import javax.swing.border.Border;
  */
 public class FormPanel extends JPanel {
     private JLabel title_label;
-    private JLabel red_label;
-    private JLabel green_label;
-    private JLabel blue_label;
     private JLabel content_label;
     private JLabel colorChooser_label;
     private JTextField title_field;
-    private JTextField red_field;
-    private JTextField blue_field;
-    private JTextField green_field;
     private JTextArea content_field;
     private JTextField colorChooser_field;
     private JButton submit_button;
@@ -51,17 +45,12 @@ public class FormPanel extends JPanel {
                 inner_border));
         
         title_label = new JLabel(messages.getString("request-title"));
-        red_label = new JLabel(messages.getString("request-red"));
-        blue_label = new JLabel(messages.getString("request-blue"));
-        green_label = new JLabel(messages.getString("request-green"));
         content_label = new JLabel(messages.getString("request-content"));
         colorChooser_label = new JLabel(messages.getString("choose-color"));
         submit_button = new JButton(messages.getString("submit-button"));
+        choose_button = new JButton(messages.getString("pick-button"));
         
         title_field = new JTextField(10);
-        red_field = new JTextField(10);
-        blue_field = new JTextField(10);
-        green_field = new JTextField(10);
         colorChooser_field = new JTextField(10);
         content_field = new JTextArea(20,20);
         
@@ -70,8 +59,10 @@ public class FormPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Execute JColorChooser
                 Color color = Color.RED;
-                Color actualColor = JColorChooser.showDialog(colorChooser_field,"Select a Color", color);
-                System.out.println(actualColor);
+                Color actualColor = JColorChooser.showDialog(choose_button,"Select a Color", color);
+                System.out.println(actualColor.getRed());
+                colorChooser_field.setText(actualColor.toString());
+                colorChooser_field.enableInputMethods(false);
             }
         });
         
@@ -79,13 +70,9 @@ public class FormPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String title = title_field.getText();
-                String red = red_field.getText();
-                String blue = blue_field.getText();
-                String green = green_field.getText();
                 String content = content_field.getText();
                 
-                FormEvent event = new FormEvent(this, title, red, blue,
-                    green, content);
+                FormEvent event = new FormEvent(this, title, content);
                 if (formListener != null) {
                     formListener.formSubmit(event);
                 }
@@ -186,6 +173,11 @@ public class FormPanel extends JPanel {
         gc.gridy = 5;
         gc.anchor = GridBagConstraints.LINE_START;
         add(colorChooser_field, gc);
+        
+        gc.gridx = 1;
+        gc.gridy = 5;
+        gc.anchor = GridBagConstraints.FIRST_LINE_END;
+        add(choose_button, gc);
         
         /******** seventh row ********/
         gc.weightx = 1;
