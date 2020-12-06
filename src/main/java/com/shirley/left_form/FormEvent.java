@@ -14,21 +14,54 @@ import java.util.EventObject;
 public class FormEvent extends EventObject {
 
     private String title;
-    private String redColor;
-    private String greenColor;
-    private String blueColor;
+    private String redForeground;
+    private String greenForeground;
+    private String blueForeground;
+    private String redBackground;
+    private String greenBackground;
+    private String blueBackground;
     private String content;
 
-    public FormEvent(Object source, String title, String redColor, 
-            String greenColor, String blueColor, String content) {
+    public FormEvent(Object source, String title, String redForeground, 
+            String greenForeground, String blueForeground, 
+            String redBackground, String greenBackground,
+            String blueBackground, String content) {
         super(source);
         this.title = title;
-        this.redColor = redColor;
-        this.greenColor = greenColor;
-        this.blueColor = blueColor;
+        this.redForeground = redForeground;
+        this.greenForeground = greenForeground;
+        this.blueForeground = blueForeground;
+        this.redBackground = redBackground;
+        this.blueBackground = blueBackground;
+        this.greenBackground = greenBackground;
         this.content = content;
     }
 
+    
+    public String getRedBackground() {
+        return redBackground;
+    }
+
+    public void setRedBackground(String redBackground) {
+        this.redBackground = redBackground;
+    }
+
+    public String getGreenBackground() {
+        return greenBackground;
+    }
+
+    public void setGreenBackground(String greenBackground) {
+        this.greenBackground = greenBackground;
+    }
+
+    public String getBlueBackground() {
+        return blueBackground;
+    }
+
+    public void setBlueBackground(String blueBackground) {
+        this.blueBackground = blueBackground;
+    }
+    
     public String getTitle() {
         return title;
     }
@@ -37,28 +70,28 @@ public class FormEvent extends EventObject {
         this.title = title;
     }
 
-    public String getRedColor() {
-        return redColor;
+    public String getRedForeground() {
+        return redForeground;
     }
 
-    public void setRedColor(String redColor) {
-        this.redColor = redColor;
+    public void setRedForeground(String redForeground) {
+        this.redForeground = redForeground;
     }
 
-    public String getGreenColor() {
-        return greenColor;
+    public String getGreenForeground() {
+        return greenForeground;
     }
 
-    public void setGreenColor(String greenColor) {
-        this.greenColor = greenColor;
+    public void setGreenForeground(String greenForeground) {
+        this.greenForeground = greenForeground;
     }
 
-    public String getBlueColor() {
-        return blueColor;
+    public String getBlueForeground() {
+        return blueForeground;
     }
 
-    public void setBlueColor(String blueColor) {
-        this.blueColor = blueColor;
+    public void setBlueForeground(String blueForeground) {
+        this.blueForeground = blueForeground;
     }
 
     public String getContent() {

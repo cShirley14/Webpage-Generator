@@ -31,9 +31,13 @@ public class FormPanel extends JPanel {
     private JButton choose_button;
     private FormListener formListener;
     private ResourceBundle messages = Languages.getResourceBundle();
-    private String red;
-    private String blue;
-    private String green;
+    private String redForeground;
+    private String blueForeground;
+    private String greenForeground;
+    private String redBackground;
+    private String blueBackground;
+    private String greenBackground;
+    
     
     public FormPanel() {
         Dimension size = getPreferredSize();
@@ -61,9 +65,12 @@ public class FormPanel extends JPanel {
                 // Execute JColorChooser
                 Color color = Color.RED;
                 Color actualColor = JColorChooser.showDialog(choose_button,"Select a Color", color);
-                red = Integer.toString(255-actualColor.getRed());
-                green = Integer.toString(255-actualColor.getGreen());
-                blue = Integer.toString(255-actualColor.getBlue());
+                redForeground = Integer.toString(255-actualColor.getRed());
+                greenForeground = Integer.toString(255-actualColor.getGreen());
+                blueForeground = Integer.toString(255-actualColor.getBlue());
+                redBackground = Integer.toString(actualColor.getRed());
+                greenBackground = Integer.toString(actualColor.getGreen());
+                blueBackground = Integer.toString(actualColor.getBlue());
             }
         });
         
@@ -73,8 +80,10 @@ public class FormPanel extends JPanel {
                 String title = title_field.getText();
                 String content = content_field.getText();
                 
-                FormEvent event = new FormEvent(this, title, red, green,  
-                        blue, content);
+                FormEvent event = new FormEvent(this, title
+                        , redForeground, greenForeground,  
+                        blueForeground, redBackground, greenBackground,
+                        blueBackground, content);
                 if (formListener != null) {
                     formListener.formSubmit(event);
                 }

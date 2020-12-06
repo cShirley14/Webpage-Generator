@@ -1,5 +1,7 @@
 package com.shirley;
 
+import com.shirley.form_builder.HTMLBuilder;
+import com.shirley.form_builder.HTMLBuilder.HTMLGenerator;
 import com.shirley.left_form.FormEvent;
 import com.shirley.left_form.FormListener;
 import com.shirley.left_form.FormPanel;
@@ -98,11 +100,18 @@ public class MainFrame extends JFrame {
                 } else {
                     String title = formEvent.getTitle();
                     String content = formEvent.getContent();
-                    String colorRed = formEvent.getRedColor();
-                    String colorBlue = formEvent.getBlueColor();
-                    String colorGreen = formEvent.getGreenColor();
-                    textPanel.appendText(title+content+colorRed+colorBlue+
-                            colorGreen);
+                    String redForeground = formEvent.getRedForeground();
+                    String blueForeground = formEvent.getBlueForeground();
+                    String greenForeground = formEvent.getGreenForeground();
+                    String redBackground = formEvent.getRedBackground();
+                    String blueBackground = formEvent.getBlueBackground();
+                    String greenBackground = formEvent.getGreenBackground();
+                    
+                    textPanel.appendText(HTMLGenerator.buildWebPage(
+                    title,redForeground,greenForeground,blueForeground,
+                            redBackground, greenBackground,blueBackground,
+                            content
+                    ));
                 }
         }
     });
