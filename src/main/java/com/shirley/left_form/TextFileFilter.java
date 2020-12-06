@@ -16,7 +16,7 @@ public class TextFileFilter extends FileFilter {
         String fileName = file.getName();
         String extension = getFileExtension(fileName);
         // return false if the extension is null or is not null
-        if (extension == null || !extension.equals("txt")) {
+        if (extension == null || !extension.equals("html")) {
             return false;
         }
         return true;
@@ -24,7 +24,7 @@ public class TextFileFilter extends FileFilter {
     
     @Override
     public String getDescription() {
-        return "TXT files (*.txt)";
+        return "HTML files (*.html)";
     }
     
    public static String getFileExtension(String name) {

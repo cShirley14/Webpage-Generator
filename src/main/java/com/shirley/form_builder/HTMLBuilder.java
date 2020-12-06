@@ -21,7 +21,7 @@ public class HTMLBuilder {
             sb.append("<!DOCTYPE html>\n");
             sb.append("<html>\n");
             sb.append("\t<head>\n");
-            sb.append("\t\t<title>").append(title).append("<\title>\n");
+            sb.append("\t\t<title>").append(title).append("</title>\n");
             sb.append("\t\t<style type='text/css'>\n");
             sb.append("\t\t\tbody {\n");
             sb.append("\t\t\t\tcolor: rgb(").append(
