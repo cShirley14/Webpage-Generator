@@ -7,7 +7,7 @@ import javax.swing.filechooser.FileFilter;
  *
  * @author Chantal Shirley
  */
-public class TextFileListener extends FileFilter {
+public class TextFileFilter extends FileFilter {
     @Override
     public boolean accept(File file) {
         if (file.isDirectory()) {
