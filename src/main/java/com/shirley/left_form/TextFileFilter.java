@@ -10,14 +10,14 @@ import javax.swing.filechooser.FileFilter;
 public class TextFileFilter extends FileFilter {
     @Override
     public boolean accept(File file) {
-        if (file.isDirectory()) {
-            return true;
-        }
         String fileName = file.getName();
         String extension = getFileExtension(fileName);
         // return false if the extension is null or is not null
         if (extension == null || !extension.equals("html")) {
             return false;
+        }
+        if (file.isDirectory()) {
+            return true;
         }
         return true;
     }

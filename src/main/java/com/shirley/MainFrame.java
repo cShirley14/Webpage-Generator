@@ -61,15 +61,20 @@ public class MainFrame extends JFrame {
                 if (menuItemText.equals(messages.getString("export-title"))) {
                     int action = fileChooser.showSaveDialog(MainFrame.this);
                     if(action == JFileChooser.APPROVE_OPTION) {
+                        File file = new File(
+                                    fileChooser.getSelectedFile().getPath());
                         try (PrintWriter writer = new PrintWriter (    
-                                new File(
-                                    fileChooser.getSelectedFile().getPath()))) {
+                                file)) {
                             writer.print(textPanel.getText());
+                            if (fileChooser.accept(file)== false) {
+                                throw new Exception(" " + messages.getString(
+                                "html-exception"));
+                            }
                             JOptionPane.showMessageDialog(MainFrame.this,
                                     messages.getString("saved-message"),
                                     messages.getString("save-message"),
                                     JOptionPane.INFORMATION_MESSAGE);
-                        } catch (FileNotFoundException ex) {
+                        } catch (Exception ex) {
                             JOptionPane.showMessageDialog(MainFrame.this, 
                                     messages.getString("fail-export") +
                                     ex.getMessage(),
