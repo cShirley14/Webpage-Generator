@@ -44,19 +44,14 @@ public class FormPanel extends JPanel {
         setBorder(BorderFactory.createCompoundBorder(outer_border, 
                 inner_border));
         
-        title_label = new JLabel(messages.getString("request-title"), 
-                JLabel.LEFT);
-        red_label = new JLabel(messages.getString("request-red"),
-                JLabel.LEFT);
-        blue_label = new JLabel(messages.getString("request-blue"),
-                JLabel.LEFT);
-        green_label = new JLabel(messages.getString("request-green"),
-                JLabel.LEFT);
-        content_label = new JLabel(messages.getString("request-content"),
-                JLabel.LEFT);
+        title_label = new JLabel(messages.getString("request-title"));
+        red_label = new JLabel(messages.getString("request-red"));
+        blue_label = new JLabel(messages.getString("request-blue"));
+        green_label = new JLabel(messages.getString("request-green"));
+        content_label = new JLabel(messages.getString("request-content"));
         submit_button = new JButton(messages.getString("submit-button"));
         
-        title_field = new JTextField(10);
+        title_field = new JTextField(50);
         red_field = new JTextField(10);
         blue_field = new JTextField(10);
         green_field = new JTextField(10);
@@ -122,12 +117,12 @@ public class FormPanel extends JPanel {
         gc.weighty = 1;
         
         gc.gridx = 0;
-        gc.gridy = 1;
+        gc.gridy = 2;
         gc.anchor = GridBagConstraints.LINE_END;
         add(green_label, gc);
         
         gc.gridx = 1;
-        gc.gridy = 1;
+        gc.gridy = 2;
         gc.anchor = GridBagConstraints.LINE_START;
         add(green_field, gc);
         
@@ -136,12 +131,12 @@ public class FormPanel extends JPanel {
         gc.weighty = 1;
         
         gc.gridx = 0;
-        gc.gridy = 1;
+        gc.gridy = 3;
         gc.anchor = GridBagConstraints.LINE_END;
         add(blue_label, gc);
         
         gc.gridx = 1;
-        gc.gridy = 1;
+        gc.gridy = 3;
         gc.anchor = GridBagConstraints.LINE_START;
         add(blue_field, gc);
         
@@ -150,12 +145,12 @@ public class FormPanel extends JPanel {
         gc.weighty = 1;
         
         gc.gridx = 0;
-        gc.gridy = 1;
+        gc.gridy = 4;
         gc.anchor = GridBagConstraints.LINE_END;
         add(content_label, gc);
         
         gc.gridx = 1;
-        gc.gridy = 1;
+        gc.gridy = 4;
         gc.anchor = GridBagConstraints.LINE_START;
         add(content_field, gc);
         
@@ -164,7 +159,7 @@ public class FormPanel extends JPanel {
         gc.weighty = 20;
         
         gc.gridx = 1;
-        gc.gridy = 2;
+        gc.gridy = 5;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(submit_button, gc);
     }
