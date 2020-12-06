@@ -22,21 +22,24 @@ public class HTMLBuilder {
             sb.append("<html>\n");
             sb.append("\t<head>\n");
             sb.append("\t\t<title>");
-            sb.append(title);
-            sb.append("<\title>\n");
+            sb.append(title).append("<\title>\n");
             sb.append("\t\t<style type='text/css'>\n");
             sb.append("\t\t\tbody {\n");
-            sb.append("\t\t\t\tcolor: rgb(");
-            sb.append(redForeground+",");
-            sb.append(greenForeground+",");
-            sb.append(blueForeground+");\n");
-            sb.append("\t\t\t\tbackground: rgb(");
-            sb.append(redBackground+",");
-            sb.append(greenBackground+",");
-            sb.append(blueBackground+");\n");
+            sb.append("\t\t\t\tcolor: rgb(").append(
+                    redForeground).append(",").append(
+                    greenForeground).append(",").append(
+                    blueForeground).append(");\n");
+            sb.append("\t\t\t\tbackground: rgb(").append(
+                    redBackground).append(",").append(
+                    greenBackground).append(",").append(
+                    blueBackground).append(");\n");
             sb.append("\t\t\t}\n");
             sb.append("\t\t</style>");
-            
+            sb.append("\t</head>\n");
+            sb.append("\t<body>\n");
+            sb.append("\t\t<section>\n");
+            sb.append("\t\t\t<header>\n");
+            sb.append("<h1>");
             
             
             return sb.toString();
