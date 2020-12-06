@@ -35,7 +35,7 @@ public class FormPanel extends JPanel {
     
     public FormPanel() {
         Dimension size = getPreferredSize();
-        size.width = 250;
+        size.width = 500;
         setPreferredSize(size);
         
         Border inner_border = BorderFactory.createTitledBorder(
@@ -51,11 +51,11 @@ public class FormPanel extends JPanel {
         content_label = new JLabel(messages.getString("request-content"));
         submit_button = new JButton(messages.getString("submit-button"));
         
-        title_field = new JTextField(50);
+        title_field = new JTextField(10);
         red_field = new JTextField(10);
         blue_field = new JTextField(10);
         green_field = new JTextField(10);
-        content_field = new JTextField(10);
+        content_field = new JTextField(25);
         submit_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

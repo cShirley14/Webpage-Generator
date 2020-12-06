@@ -38,8 +38,8 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         super();
         setTitle(messages.getString("title"));
-        setMinimumSize(new Dimension(500, 400));
-        setSize(600,500);
+        setMinimumSize(new Dimension(800, 400));
+        setSize(1000,800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -77,12 +77,13 @@ public class MainFrame extends JFrame {
                                     messages.getString("file-not-found"),
                                     JOptionPane.ERROR_MESSAGE);
                         }
-                    } else if (menuItemText.equals(
-                            messages.getString("quit-title"))) {
-                        closeWindow();
                     }
-                } 
-            }
+                }
+                else if (menuItemText.equals(messages.getString(
+                        "quit-title"))) {
+                        closeWindow();
+                }
+            } 
         });
 
         
@@ -118,14 +119,11 @@ public class MainFrame extends JFrame {
             "Do you really want to quit?",
             "Confirm Exit", JOptionPane.OK_CANCEL_OPTION);
         if(action == JOptionPane.OK_OPTION){
-            String email = JOptionPane.showInputDialog(MainFrame.this,
-                "Enter your email address", 
-                "Would you like to sign up for our newsletter?",
-                JOptionPane.QUESTION_MESSAGE);
-            if(email != null) {
-                System.out.println(email + " added to database");
-            }
             System.exit(0); // or e.getWindow().dispose();
+        }
+        else if (action == JOptionPane.CANCEL_OPTION) {
+            // Return back to Main Frame
+            JOptionPane.getFrameForComponent(MainFrame.this);
         }
     }
 

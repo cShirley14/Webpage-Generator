@@ -33,7 +33,8 @@ public class MenuBar extends JMenuBar implements ActionListener {
         file_menu.add(export_data_item);
         export_data_item.addActionListener(this);
         
-        file_menu.addSeparator();
+        
+        file_menu.addSeparator();     
         quit_item = new JMenuItem(messages.getString("quit-title"));
         file_menu.add(quit_item);
         quit_item.addActionListener(this);
