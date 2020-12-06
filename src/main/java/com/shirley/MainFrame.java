@@ -13,10 +13,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -100,7 +97,7 @@ public class MainFrame extends JFrame {
                 if (formEvent.getTitle().isEmpty()) {
                     JOptionPane.showMessageDialog(rootPane, "You"
                             + " cannot create a page without a "
-                            + "title, please try again!");
+                            + "title, please try again.");
                 } else {
                     String title = formEvent.getTitle();
                     String content = formEvent.getContent();
