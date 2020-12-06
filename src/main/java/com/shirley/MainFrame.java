@@ -83,8 +83,6 @@ public class MainFrame extends JFrame {
             } 
         });
 
-        
-        
         toolbar = new Toolbar();
         add(toolbar, BorderLayout.NORTH);
         toolbar.setVisible(false);
@@ -95,9 +93,8 @@ public class MainFrame extends JFrame {
             @Override
             public void formSubmit(FormEvent formEvent) {
                 if (formEvent.getTitle().isEmpty()) {
-                    JOptionPane.showMessageDialog(rootPane, "You"
-                            + " cannot create a page without a "
-                            + "title, please try again.");
+                    JOptionPane.showMessageDialog(rootPane, messages.getString(
+                    "title-required"));
                 } else {
                     String title = formEvent.getTitle();
                     String content = formEvent.getContent();
@@ -115,8 +112,8 @@ public class MainFrame extends JFrame {
     
     private void closeWindow() {
         int action = JOptionPane.showConfirmDialog(MainFrame.this, 
-            "Do you really want to quit?",
-            "Confirm Exit", JOptionPane.OK_CANCEL_OPTION);
+            messages.getString("quit-question"),
+            messages.getString("confirm-exit"), JOptionPane.OK_CANCEL_OPTION);
         if(action == JOptionPane.OK_OPTION){
             System.exit(0); // or e.getWindow().dispose();
         }
