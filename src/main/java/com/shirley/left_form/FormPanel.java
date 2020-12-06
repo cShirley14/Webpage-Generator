@@ -27,7 +27,6 @@ public class FormPanel extends JPanel {
     private JLabel colorChooser_label;
     private JTextField title_field;
     private JTextArea content_field;
-    private JTextField colorChooser_field;
     private JButton submit_button;
     private JButton choose_button;
     private FormListener formListener;
@@ -54,7 +53,6 @@ public class FormPanel extends JPanel {
         choose_button = new JButton(messages.getString("pick-button"));
         
         title_field = new JTextField(10);
-        colorChooser_field = new JTextField(10);
         content_field = new JTextArea(20,20);
         
         choose_button.addActionListener(new ActionListener() {
@@ -63,9 +61,9 @@ public class FormPanel extends JPanel {
                 // Execute JColorChooser
                 Color color = Color.RED;
                 Color actualColor = JColorChooser.showDialog(choose_button,"Select a Color", color);
-                System.out.println(actualColor.getRed());
-                colorChooser_field.setText(actualColor.toString());
-                colorChooser_field.enableInputMethods(false);
+                red = Integer.toString(actualColor.getRed());
+                green = Integer.toString(actualColor.getGreen());
+                blue = Integer.toString(actualColor.getBlue());
             }
         });
         

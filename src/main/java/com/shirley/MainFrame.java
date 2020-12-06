@@ -98,7 +98,11 @@ public class MainFrame extends JFrame {
                 } else {
                     String title = formEvent.getTitle();
                     String content = formEvent.getContent();
-                    textPanel.appendText("Test Success");
+                    String colorRed = formEvent.getRedColor();
+                    String colorBlue = formEvent.getBlueColor();
+                    String colorGreen = formEvent.getGreenColor();
+                    textPanel.appendText(title+content+colorRed+colorBlue+
+                            colorGreen);
                 }
         }
     });
