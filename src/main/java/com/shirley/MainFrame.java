@@ -97,10 +97,15 @@ public class MainFrame extends JFrame {
         formPanel.setListener(new FormListener() {
             @Override
             public void formSubmit(FormEvent formEvent) {
-                String title = formEvent.getTitle();
-                String content = formEvent.getContent();
-                
-                textPanel.appendText("Test Success");
+                if (formEvent.getTitle().isEmpty()) {
+                    JOptionPane.showMessageDialog(rootPane, "You"
+                            + " cannot create a page without a "
+                            + "title, please try again!");
+                } else {
+                    String title = formEvent.getTitle();
+                    String content = formEvent.getContent();
+                    textPanel.appendText("Test Success");
+                }
         }
     });
         

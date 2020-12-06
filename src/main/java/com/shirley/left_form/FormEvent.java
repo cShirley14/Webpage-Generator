@@ -19,9 +19,13 @@ public class FormEvent extends EventObject {
     private String blueColor;
     private String content;
 
-    public FormEvent(Object source, String title, String content) {
+    public FormEvent(Object source, String title, String redColor, 
+            String greenColor, String blueColor, String content) {
         super(source);
         this.title = title;
+        this.redColor = redColor;
+        this.greenColor = greenColor;
+        this.blueColor = blueColor;
         this.content = content;
     }
 
@@ -31,6 +35,30 @@ public class FormEvent extends EventObject {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getRedColor() {
+        return redColor;
+    }
+
+    public void setRedColor(String redColor) {
+        this.redColor = redColor;
+    }
+
+    public String getGreenColor() {
+        return greenColor;
+    }
+
+    public void setGreenColor(String greenColor) {
+        this.greenColor = greenColor;
+    }
+
+    public String getBlueColor() {
+        return blueColor;
+    }
+
+    public void setBlueColor(String blueColor) {
+        this.blueColor = blueColor;
     }
 
     public String getContent() {

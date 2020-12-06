@@ -32,6 +32,9 @@ public class FormPanel extends JPanel {
     private JButton choose_button;
     private FormListener formListener;
     private ResourceBundle messages = Languages.getResourceBundle();
+    private String red;
+    private String blue;
+    private String green;
     
     public FormPanel() {
         Dimension size = getPreferredSize();
@@ -72,7 +75,8 @@ public class FormPanel extends JPanel {
                 String title = title_field.getText();
                 String content = content_field.getText();
                 
-                FormEvent event = new FormEvent(this, title, content);
+                FormEvent event = new FormEvent(this, title, red, green,  
+                        blue, content);
                 if (formListener != null) {
                     formListener.formSubmit(event);
                 }
